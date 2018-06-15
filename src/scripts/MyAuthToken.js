@@ -23,7 +23,7 @@
 
 function MyAuthToken(env) {
     if (env === "PROD") {
-        this.tokenService = "https://autodesk-auth.herokuapp.com/";
+        this.tokenService = "http://127.0.0.1:5000/auth";
     } else {
         alert("DEVELOPER ERROR: No valid environment set for MyAuthToken()");
     }
@@ -72,7 +72,7 @@ MyAuthToken.prototype.get = function()
     console.log("getting from url " + this.tokenService );
 
     var jqxhr = $.ajax({
-        url: "https://autodesk-auth.herokuapp.com/",
+        url: "http://127.0.0.1:5000/auth",
         type: 'GET',
         async: false,
         success: function(ajax_data) {
